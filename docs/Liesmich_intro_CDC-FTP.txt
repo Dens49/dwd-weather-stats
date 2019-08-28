@@ -1,0 +1,120 @@
+﻿Liesmich_intro_CDC-FTP.pdf					letzte Änderung: 20.01.2018 
+
+CDC FTP-Server
+
+Sie haben freien Zugang zu vielen Klimadaten des Climate Data Centers (CDC) des DWD. Bitte beachten Sie die Nutzungsbedingungen in  ftp://ftp-cdc.dwd.de/pub/CDC/Nutzungsbedingungen_German.pdf . 
+
+Wir stellen Ihnen auf dem CDC FTP-Server ftp://ftp-cdc.dwd.de/pub/ 
+
+* gemessene Parameter an DWD-Stationen 
+* abgeleitete Parameter an den Stationsstandorten 
+* Rasterfelder für Deutschland 
+* Mittelwerte für die einzelnen Bundesländer und für Gesamtdeutschland
+* Rasterfelder für Europa
+* Regionale Reanalyse
+* Weltweite Klimastationsdaten
+
+in stündlicher, täglicher, monatlicher, jährlicher oder vieljähriger (z.B.: 30jährige Mittel) Auflösung zur Verfügung (Details siehe unten). Neuerdings sind sogar 1-minütige Niederschlagsmessungen und 10-minütige Messungen der Temperatur, des Niederschlags, des Windes und der Sonnenscheindauer von den Stationen des DWD erhältlich. 
+
+Für regelmäßig versionierte Daten kann man zwischen den beiden Unterverzeichnissen „recent“ und „historical“ wählen. Unter „recent” stehen aktuelle Daten, welche die routinemäßige Qualitätskontrolle noch nicht vollständig durchlaufen haben. Für die Daten im Unterverzeichnis „historical“ ist die routinemäßige Qualitätskontrolle abgeschlossen. Die allerneuesten 1-minütigen und 10-minütigen Daten sind in den Unterverzeichnissen „now“ zu finden.
+
+Die laufende Qualitätssicherung führt dazu, dass auch noch zu einem späteren Zeitpunkt erkannte Fehler in den archivierten Daten korrigiert werden. Außerdem werden durch die Digitalisierung historischer Aufzeichnungen die Zeitreihen laufend erweitert. Deshalb werden unsere archivierten Klimadaten versioniert. Auf dem CDC FTP-Server wird die letzte gültige Version unter „historical“ bereitgestellt, in ungefähr jährlichen Abständen.
+
+Die Zeitreihen können eventuell Inhomogenitäten (z.B. durch Stationsverlegung oder Messgerätewechsel) enthalten. Nutzer sollten sich deshalb unbedingt anhand der Stationsmetadaten über Ursachen für mögliche Inhomogenitäten informieren und die beigefügten Datensatzbeschreibungen lesen.
+
+Bitte beachten Sie, dass nicht alle meteorologische Parameter in allen zeitlichen Auflösungen angeboten werden, und dass sich die Zeitpunkte der Datenpublikation unterscheiden können.
+
+
+
+
+
+
+
+
+Für Änderungen verfolgen Sie bitte den Change-log: 
+ftp://ftp-cdc.dwd.de/pub/CDC/Change_log_CDC_ftp.txt 
+und/oder abonnieren Sie den CDC-Newsletter:
+http://www.dwd.de/DE/klimaumwelt/cdc/cdc.html
+In Zukunft zu erwartende Änderungen werden hier angekündigt:
+ftp://ftp-cdc.dwd.de/pub/CDC/Announce_log_CDC_ftp.txt
+Fehler sind hier aufgelistet: 
+ftp://ftp-cdc.dwd.de/pub/CDC/Error_log_CDC_ftp.txt
+
+Daten auf dem CDC FTP-Server
+
+1. An DWD-Stationen gemessene Parameter 
+Historische und aktuelle meteorologische Daten für zahlreiche Parameter, z.B. für Lufttemperatur gemeinsam mit Luftfeuchte, Bodentemperatur, Niederschlagshöhe, Druck, Windgeschwindigkeit und –richtung, Sichtweite, solare Einstrahlung, Sonnenscheindauer und Wolkenbedeckung.
+
+Die Daten einer Station sind in jeweils einer ZIP-Datei abgelegt, gemeinsam mit den Stationsmetadaten. Verfügbare Auflösung: 10-minütliche, stündliche, tägliche, monatliche und vieljährige Mittelwerte (1961-90, 1971-2000, 1981-2010). Etwa 400 Klimastationen sind gegenwärtig aktiv. Die entsprechenden Stationslisten mit allen Klimastationen für die entsprechenden Parameter liegen hier. 
+
+Die Terminwerte einer Auswahl von 81 über Deutschland verteilten Klimastationen werden im traditionellen KL-Format (mit 36 meteorologischen Parametern) zur Verfügung gestellt. 
+
+Speziell für Messungen im urbanen Raum werden Stadtstationen eingerichtet. 
+
+Niederschlagsdaten aus dem speziellen Niederschlagsmessnetz (ca. 2000 aktive Stationen) sind in täglicher und monatlicher Auflösung verfügbar. Die Liste der Niederschlagsstationen ist hier. Neuerdings sind auch 1-minütige und 10-minütige Niederschlagsmessungen erhältlich.
+
+Schneehöhen und Wasseräquivalente liegen in täglicher Auflösung vor.
+
+Phänologische Daten werden an ca. 1200 aktiven Stationen erhoben (siehe Liste der Sofortmelder und Liste der Jahresmelder). An ausgewählten Pflanzen, wie z.B. Apfel, Birke, Schneeglöckchen, Stachelbeere, Weizen, Wein, usw., werden die verschiedenen Entwicklungsstadien beobachtet und jährlich (Jahresmelder) oder sofort (Sofortmelder) dem DWD gemeldet.
+
+Monatliche Profile von12 Radiosonden (Ballonsondierungen) liegen im Original und homogenisiert vor.
+
+
+2. Abgeleitete Parameter an Stationsstandorten
+Agrarmeteorologische Modelle liefern Bodenparameter an Stationsstandorten: potentielle und reale Verdunstung über Gras und sandigem Lehm, die Bodenfeuchte unter Gras und sandigem Lehm, Bodentemperaturen in 5cm, 10cm, 20 cm, 50 cm und 100cm Tiefe unter unbewachsenem Boden, sowie die maximale Frosteindringtiefe. Verfügbare Auflösung: täglich, monatlich und vieljährig. Die Bodenparameter werden für ungefähr 320 Stationsstandorte  berechnet, die Zeitreihen beginnen 1991. Es gibt eine Liste  und eine Karte der Standorte, für welche die Berechnungen durchgeführt wurden.
+
+Technische Parameter umfassen Monatsgradtage, Heiztage und Kühltage.
+
+
+3. Rasterfelder für Deutschland
+Die Rasterfelder decken Deutschland in verschiedener zeitlicher Auflösung ab. Nicht für alle Parameter sind Rasterwerte verfügbar.
+Folgende Niederschlagsraster werden zur Verfügung gestellt: RADOLAN Niederschlagsraster sind aus Radardaten und Stationsdaten abgeleitet (stündlich, täglich). REGNIE Niederschlagsraster dagegen berechnen sich nur aus den Messdaten der Niederschlagsstationen (täglich, monatlich, vieljährig). Klimastationen sind die Datengrundlage für Raster in monatlicher, halbjährlicher, jährlicher und vieljähriger Auflösung.
+
+Starkniederschlagsstatistiken (KOSTRA-DWD) liefern Aussagen über Eintrittswahrscheinlichkeiten von Starkregen verschiedener Andauer in Deutschland.
+
+Agrarmeteorologischen Modellen liefern Raster der Bodenparameter:  abgeleitete Bodenfeuchte, Bodentemperatur in 5cm Tiefe, Frosteindringtiefe, potentielle und reale Verdunstung gibt es in täglicher, monatlicher, jährlicher und vieljähriger Auflösung.
+
+Lufttemperatur (Mittel, Max, Min), Sonnenscheindauer, Trockenheitsindex, Anzahl der Tage mit Schneebedeckung, Frosttage, sowie die Anzahl der Tage mit Schwellenwertüber- bzw. -unterschreitungen für Temperatur und Niederschlag gibt es in monatlicher, jährlicher und vieljähriger Auflösung.
+
+Solarstrahlungsraster (1km x1km) umfassen Globalstrahlung (monatliche, jährliche und vieljährige Mittel), diffuse Strahlung (monatlich, jährlich) und direkte Strahlung (monatlich, jährlich), diese sind alle aus Satellitendaten und Bodenmessungen abgeleitet. 
+
+Windenergieparameter sind aus bodennahen Messungen abgeleitet und gibt es als vieljähriges Mittel, sowohl in einer 1km x 1km Auflösung als auch als 200m x 200m Auflösung.
+
+Das Projekt TRY hat für den Zeitraum 1995-2012 monatliche, tägliche und stündliche Raster auf 1km x 1km berechnet, für Lufttemperatur, Luftfeuchte, Druck, Taupunkt, Wasserdampfgehalt, Wolkenbedeckung, Windrichtung und Windgeschwindigkeit, sowie für Direktstrahlung, Globalstrahlung und langwellige ausgehende Strahlung.
+
+Aus den phänologischen Beobachtungen sind jährliche Raster für ca 50 phänologische Phasen, sowie der Vegetationsbeginn (jährlich, und als vieljähriges Mittel) und das Vegetationsende (jährlich, und als vieljähriges Mittel) berechnet.
+
+
+4. Mittelwerte für die einzelnen Bundesländer und für Gesamtdeutschland
+Diese monatlichen, saisonalen und jährlichen Mittelwerte (für die Lufttemperatur, den Niederschlag und die Sonnenscheindauer) sind aus den Rasterfeldern für Deutschland berechnet.
+
+5. Rasterfelder für Europa
+Für den Zeitraum 2001-2010 wurde ein 5x5 km Gitter, jeweils in  monatlicher und täglicher  Auflösung für Lufttemperatur (Mittel, Max, Min) 2m über dem Boden, und Windgeschwindigkeiten 10m über dem Boden, berechnet.
+
+Aus Satellitendaten abgeleitete Wolkenbedeckung wird in monatlicher Auflösung zur Verfügung gestellt.
+
+6. Regionale Reanalyse 
+Ausgewählte Parameter der regionalen Reanalyse COSMO-REA6 werden auf ftp://ftp-cdc.dwd.de/pub/REA/  bereitgestellt. Die stündlichen Felder decken Europa für den Zeitraum 1995-2016,  in 6km x 6km Auflösung ab. Das Format ist das  Originalformat  von COSMO (DWD grib1 in gedrehten Koordinaten). Folgende Parameter werden bereitgestellt: Luftdruck (reduziert und nichtreduziert) an der Erdoberfläche, Niederschlag, Temperatur (Min, Max, Mittel), relative und spezifische Feuchte, Windkomponenten U und V, Windspitze, diverse Strahlungparameter (diffuse und direkte), Höhe der Grenzschicht, integrierte Wasserdampfsäule, Wolkenbedeckung; je nach Parameter für die untersten 6 Modell-levels, oder auch auf 10m (Wind) bzw 2m (Temperatur) über dem Modellboden. 
+
+
+7. Weltweite Klimastationsdaten
+Historische und aktuelle monatliche Stationsdaten aus CLIMAT-Meldungen (qualitätsgeprüft) für Lufttemperatur (Mittel, Max, Min), Niederschlagshöhe, Anzahl der Niederschlagstage, Sonnenscheindauer, Luftdruck, Dampfdruck, und die daraus abgeleiteten langjährigen Mittel. Außerdem stehen die Monatsdateien der auf die Monat-Jahr-Angabe und das Format geprüften weltweiten CLIMAT-Meldungen zur Verfügung, diese beinhalten eine Vielzahl an Parametern.
+
+
+Weitere Datenzugangswege 
+
+Für weitere  Datenzugriffswege auf (außerhalb des CDC FTP-servers ) siehe: http://www.dwd.de/DE/klimaumwelt/cdc/klinfo_systeme/klinfo_systeme_node.html .
+Kontakt
+
+Klima und Umwelt
+Zentraler Vertrieb
+Telefon: +49 (0)69 8062 4400
+Fax: +49 (0)69 8062 4499
+
+klima.vertrieb@dwd.de
+
+
+
+
+3
+

@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Weather Data - Day of year</title>
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+            #main_content {
+                padding-left: 1%;
+                padding-right: 1%;
+            }
+
+            #explanation {
+                width: 40%;
+                margin-bottom: 20px;
+            }
+
+            .form {
+                width: 40%;
+            }
+
+            .formelement {
+                margin-bottom: 10px;
+            }
+
+            .formelement input {
+                float: right;
+                width: 80%;
+            }
+
+            #sample_img {
+                width: 320px;
+                height: 140px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main_content">
+            <h1>Historical yearly weather data for a day of year</h1>
+
+            <div id="explanation">
+                Enter an address (city, location, tourist site) and a date.
+                The webservice will load the yearly historical weather data for that day of year.
+                The historical weather data may be come from the weather station that's closest to the specified address.
+            </div>
+
+            <div id="form_weather_for_day_of_year_at_address" class="form">
+                <div id="address_formelement" class="formelement">
+                    <label for="address">Address:</label>
+                    <input id="address" name="address" type="text" placeholder="E.g. Schwetzinger Schloss">
+                </div>
+                <div id="date_formelement" class="formelement">
+                    <label for="date">Date:</label>
+                    <input id="date" name="date" type="date">
+                </div>
+                <div id="submit_formelement" class="formelement">
+                    <button id="submit_button">Submit</button>
+                </div>
+            </div>
+
+            <div id="result_container"></div>
+        </div>
+
+        <script>
+            const padNumber = (num, length, paddingString) => ("" + num).padStart(length, paddingString);
+            const zeroPadTwo = num => padNumber(num, 2, "0");
+            const getBaseUrl = () => {
+                const fullUrl = location.href.split("/");
+                return fullUrl[0] + "//" + fullUrl[2];
+            }
+
+            const form = document.querySelector("#form_weather_for_day_of_year_at_address");
+            const submitButton = form.querySelector("#submit_button");
+            const addressInput = form.querySelector("#address");
+
+            // set current date as default value
+            const dateInput = form.querySelector("#date");
+            date.valueAsDate = new Date();
+
+            const resultContainer = document.querySelector("#result_container");
+            
+            submitButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                const address = addressInput.value;
+                // format as "YYYYmmdd"
+                const date = ("" + dateInput.valueAsDate.getFullYear())
+                    + zeroPadTwo(dateInput.valueAsDate.getMonth() + 1)
+                    + zeroPadTwo(dateInput.valueAsDate.getDate())
+                ;
+
+                if (address === "" || date === "") {
+                    alert("Both address and date must be filled!");
+                    return;
+                }
+
+
+                getWeatherForDayOfYearAtAddressHtml(address, date, (resultHtml) => {
+                    resultContainer.innerHTML = resultHtml;
+                });
+            });
+
+            // address and date are strings
+            // date format: YYYYmmdd
+            const getWeatherForDayOfYearAtAddressHtml = (address, date, callback) => {
+                const url = new URL(getBaseUrl() + "/api/html/weather_for_day_of_year_at_address");
+                url.searchParams.append("address", address);
+                url.searchParams.append("date", date),
+                fetch(url)
+                    .then(response => response.text()
+                        .then(text => callback(text))
+                    )
+                    .catch(error => {
+                        console.log(error.message);
+                    })
+                ;
+            };
+        </script>
+    </body>
+</html>

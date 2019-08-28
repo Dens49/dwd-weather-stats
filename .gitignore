@@ -1,0 +1,7 @@
+.vscode
+__pycache__
+data/*
+web/results/*
+todo.txt
+
+!.gitkeep
