@@ -86,6 +86,9 @@
             
             submitButton.addEventListener("click", (e) => {
                 e.preventDefault();
+
+                resultContainer.innerHTML = "";
+
                 const address = addressInput.value;
                 // format as "YYYYmmdd"
                 const date = ("" + dateInput.valueAsDate.getFullYear())
@@ -97,7 +100,6 @@
                     alert("Both address and date must be filled!");
                     return;
                 }
-
 
                 getWeatherForDayOfYearAtAddressHtml(address, date, (resultHtml) => {
                     resultContainer.innerHTML = resultHtml;

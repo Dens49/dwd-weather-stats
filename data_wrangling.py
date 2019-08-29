@@ -43,7 +43,13 @@ def get_and_prepare_daily_weather_data_for_station(file_loader, station, data_pa
         "MESS_DATUM": "date"
     }, inplace = True)
 
-    # TODO: remove columns that will definitely not be used
+    # remove leading whitespaces in column names
+    for col in daily_weather.columns:
+        if (col.startswith(" ")):
+            daily_weather.rename(columns = {col: col.strip()}, inplace = True)
+
+    # remove columns that will definitely not be used
+    daily_weather.drop(["eor"], axis = 1, inplace = True)
 
     return daily_weather
 

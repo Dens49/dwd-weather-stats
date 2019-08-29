@@ -6,6 +6,8 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from  urllib.parse import parse_qsl
 from io import BytesIO
 
+import weather_data_controller
+
 web_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "web"
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -53,23 +55,27 @@ def handleGet(path, queryParams = None):
 
     print("INFO: webserver request GET:" , path, queryParams, flush = True)
 
-    # get index page
-    if path in ["/", "/index", "/index.html"]:
-        response = index(path)
-        responseCode = 200
-    # handle user request for weather data
-    elif queryParams != None and path == "/api/html/weather_for_day_of_year_at_address":
-        response = getWeatherForDayOfYearAtAddress(queryParams)
-        responseCode = 200
-    # handle other files
-    elif not "/.." in path:
-        response = readFile(path)
-        responseCode = 200
+    try:
+        # get index page
+        if path in ["/", "/index", "/index.html"]:
+            response = index(path)
+            responseCode = 200
+        # handle user request for weather data
+        elif queryParams != None and path == "/api/html/weather_for_day_of_year_at_address":
+            response = getWeatherForDayOfYearAtAddress(queryParams)
+            responseCode = 200
+        # handle other files
+        elif not "/.." in path:
+            response = readFile(path)
+            responseCode = 200
 
-    if not response or response == "":
-        responseCode = 404
-        response = ""
-    return response, responseCode
+        if not response or response == "":
+            responseCode = 404
+            response = ""
+        return response, responseCode
+    except Exception as err:
+        print("ERROR: Exception:", err, flush = True)
+        return str(err), 500
 
 def index(path):
     return readFile("/index.html")
@@ -87,7 +93,7 @@ def readFile(path):
 def getWeatherForDayOfYearAtAddress(params):
     if not "address" in params or not "date" in params:
         return False
-    result = "<h3>TEST TEST</h3>"
+    result = weather_data_controller.yearly_day_of_year_analysis(params["address"], params["date"])
     return result
 
 def bytesMsgToString(byteMsg):
