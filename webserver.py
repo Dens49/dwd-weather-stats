@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+import traceback
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from  urllib.parse import parse_qsl
@@ -75,6 +76,7 @@ def handleGet(path, queryParams = None):
         return response, responseCode
     except Exception as err:
         print("ERROR: Exception:", err, flush = True)
+        traceback.print_exc()
         return str(err), 500
 
 def index(path):
